@@ -49,4 +49,20 @@ object FirstClass {
 
   sumSS(x => x * x * x)(1, 50)                    //> res4: Int = 1625625
 
+  //
+  //	Special syntax example: take an Int => Int function and apply it to a second parameter
+  //
+  def specialSyntax(f: Int => Int)(y: Int): Int = f(y)
+                                                  //> specialSyntax: (f: Int => Int)(y: Int)Int
+
+  specialSyntax(x => x + 13)(13)                  //> res5: Int = 26
+
+  // product is the the product of the function f over a:b
+  def product(f: Int => Int)(a: Int, b: Int): Int = if (a > b) 1 else f(a) * product(f)(a + 1, b)
+                                                  //> product: (f: Int => Int)(a: Int, b: Int)Int
+                                                 
+  product(x => x)(1, 5)                           //> res6: Int = 120
+  product(x => x*x)(1, 5)                         //> res7: Int = 14400
+  
+  
 }

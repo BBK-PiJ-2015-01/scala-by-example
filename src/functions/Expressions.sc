@@ -15,6 +15,9 @@ object Expressions {
   val seven = Integer(5) + 2                      //> seven  : Int = 7
   Integer(7) < 9                                  //> res0: Boolean = true
 
+  // Warning: don't uncomment the following as it results in an endless loop
+  //  def loop: Int = loop
+  //  loop
   println("Recursion")                            //> Recursion
 
   // not tail recursive
